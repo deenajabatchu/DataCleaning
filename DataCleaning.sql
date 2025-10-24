@@ -176,9 +176,22 @@ select * from layoffs_staging2
 where (total_laid_off is null or total_laid_off='')
 and percentage_laid_off is null;
 
+-- deleting the null values which hvaing in both  total_laid_off and percentage_laid_off
+
+Delete
+from layoffs_staging2
+where (total_laid_off is null or total_laid_off='')
+and percentage_laid_off is null;
+
+select * from layoffs_staging2;
 
 
+-- Removing the unnecessary coulmn in the table
 
+Alter table layoffs_staging2
+drop column row_num;
 
-
-      
+select * from layoffs_staging2;
+  
+  
+  
